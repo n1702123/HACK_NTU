@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>綠野先跡</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-round-about/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-round-about/css/round-about.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <style>
+
+    #map {
+        height: 500px;
+		width: 100%;
+    }
+ 
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <h1 style="color:white"><b>綠野先跡</b></h1>
+ 
+            </div>
+  
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+ 
+        <!-- Introduction Row -->
+        <div class="row"> 
+            <div class="col-lg-12">
+                 
+                <div class="col-lg-4"> 
+                    <h3><input type="checkbox" id="mybox1" onclick="showMarker()" >觀光景點</h3>  
+                </div>
+
+                <div class="col-lg-4">
+                    <h3><input type="checkbox"  id="mybox2" onclick="showMarker()" >官民一氣</h3> 
+                </div>
+ 
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Team Members Row -->
+        <div class="row">
+            <div class="col-lg-12">
+               <div id="map"></div>
+            </div> 
+        </div>
+
+         
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+ 
+
+
+    <!-- jQuery -->
+    <script src="https://blackrockdigital.github.io/startbootstrap-round-about/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://blackrockdigital.github.io/startbootstrap-round-about/js/bootstrap.min.js"></script>
+
+    <script>
+        var map;
+        function initMap() { 
+            map = new google.maps.Map(document.getElementById('map'), {
+             center: {lat: 25.0530963 , lng: 121.5511139},
+             zoom: 12
+            });
+        }
+
+
+        var locations1 = [
+            ['中正紀念堂'   , '556238'  , 25.036182  , 121.5165067 ], 
+            ['國父紀念館'   , '531639'  , 25.0400306 , 121.5580565 ],
+            ['松山文創園區' , '479003'  , 29,479003  , 121.5584532 ],
+            ['故宮博物院'   , '416238' , 25.1023554 , 121.5463038 ],
+            ['西門紅樓'     , '362417' , 25.0419167 , 121.5054108 ],
+            ['市立動物園'   , '298926' , 24.9987287 , 121.5793633 ],
+            ['臺北101觀景台', '223843' , 25.0336076 , 121.56257],
+            ['華山1914文化創意產業園區' , '223449' , 25.0441303,121.5272108],
+            ['臺灣科學教育館' , '223152' , 25.0960124,121.515655],
+            ['艋舺龍山寺' , '211559' , 25.0371623,121.497712 ],
+        ];
+
+        var locations2 = [
+            ['Bondi Beach', 25.0570963 , 121.5511139], 
+            ['Bondi Beach', 25.1570963 , 121.5511139]
+        ];
+
+
+      function showMarker(){
+ 
+        var mybox1 = $('#mybox1').is(':checked');
+        var mybox2 = $('#mybox2').is(':checked');
+        var mybox3 = $('#mybox3').is(':checked');
+
+        console.log("$mybox1 :",mybox1);
+        console.log("$mybox2 :",mybox2);
+        console.log("$mybox3 :",mybox3);
+ 
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: new google.maps.LatLng(25.0530963 , 121.5511139),
+             mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        var infowindow = new google.maps.InfoWindow(); 
+ 
+
+        var marker;
+          
+        if(mybox1){
+
+            var image = {
+                url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                // This marker is 20 pixels wide by 32 pixels high.
+                size: new google.maps.Size(20, 32),
+                // The origin for this image is (0, 0).
+                origin: new google.maps.Point(0, 0),
+                // The anchor for this image is the base of the flagpole at (0, 32).
+                anchor: new google.maps.Point(0, 32)
+            };
+ 
+            for (var i = 0; i < locations1.length; i++) {  
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations1[i][2], locations1[i][3]),
+                    map: map,
+                    icon: image,
+                });
+
+                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                    return function() {
+                        infowindow.setContent(
+                            locations1[i][0] + 
+                            "<br/><span>人數 :" + locations1[i][1] + "</span>" +
+                            "<br/><a href='C:/Users/DELL/Desktop/HACKNTU/page2.html?aa="+ "bbb" +"'>連結</a>"
+                        );
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+            }
+ 
+        }
+        
+        if(mybox2){
+
+            for (var i = 0; i < locations2.length; i++) {  
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations2[i][1], locations2[i][2]),
+                    map: map
+                });
+
+                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                    return function() {
+                    infowindow.setContent(locations[i][0]);
+                    infowindow.open(map, marker);
+                    }
+                })(marker, i));
+            }
+
+
+        }
+
+
+      }
+
+
+
+ 
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrPV8XZA8_INsW2NicR-2_wxNHW9S4v48&callback=initMap"  async defer></script>
+
+</body>
+
+</html>
