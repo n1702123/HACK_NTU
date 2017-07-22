@@ -124,21 +124,22 @@
 
 
         var locations1 = [
-            ['中正紀念堂'   , '556238'  , 25.036182  , 121.5165067 ], 
-            ['國父紀念館'   , '531639'  , 25.0400306 , 121.5580565 ],
-            ['松山文創園區' , '479003'  , 29,479003  , 121.5584532 ],
-            ['故宮博物院'   , '416238' , 25.1023554 , 121.5463038 ],
-            ['西門紅樓'     , '362417' , 25.0419167 , 121.5054108 ],
-            ['市立動物園'   , '298926' , 24.9987287 , 121.5793633 ],
-            ['臺北101觀景台', '223843' , 25.0336076 , 121.56257],
-            ['華山1914文化創意產業園區' , '223449' , 25.0441303,121.5272108],
-            ['臺灣科學教育館' , '223152' , 25.0960124,121.515655],
-            ['艋舺龍山寺' , '211559' , 25.0371623,121.497712 ],
+            ['中正紀念堂'   , '556238'  , 25.036182  , 121.5165067 , 0], 
+            ['國父紀念館'   , '531639'  , 25.0400306 , 121.5580565 , 1],
+            ['松山文創園區' , '479003'  , 29,479003  , 121.5584532 , 2],
+            ['故宮博物院'   , '416238' , 25.1023554 , 121.5463038  , 3],
+            ['西門紅樓'     , '362417' , 25.0419167 , 121.5054108  , 4],
+            ['市立動物園'   , '298926' , 24.9987287 , 121.5793633  , 5],
+            ['臺北101觀景台', '223843' , 25.0336076 , 121.56257    , 6],
+            ['華山1914文化創意產業園區' , '223449' , 25.0441303,121.5272108  , 7],
+            ['臺灣科學教育館' , '223152' , 25.0960124,121.515655   , 8],
+            ['艋舺龍山寺' , '211559' , 25.0371623,121.497712       , 9],
         ];
 
         var locations2 = [
-            ['Bondi Beach', 25.0570963 , 121.5511139], 
-            ['Bondi Beach', 25.1570963 , 121.5511139]
+            ['國父紀念館', '531639' , 25.0400306 , 121.5580565, 0],  // 國父紀念館(1)
+			['動物園' , '298926' , 25.0419167 , 121.5054108, 1],      // 動物園 
+            ['陽明山', '162546' , 25.1942462 , 121.5609363, 2],      // 陽明山 
         ];
 
 
@@ -148,9 +149,9 @@
         var mybox2 = $('#mybox2').is(':checked');
         var mybox3 = $('#mybox3').is(':checked');
 
-        console.log("$mybox1 :",mybox1);
-        console.log("$mybox2 :",mybox2);
-        console.log("$mybox3 :",mybox3);
+        //console.log("$mybox1 :",mybox1);
+        //console.log("$mybox2 :",mybox2);
+        //console.log("$mybox3 :",mybox3);
  
 
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -188,7 +189,7 @@
                         infowindow.setContent(
                             locations1[i][0] + 
                             "<br/><span>人數 :" + locations1[i][1] + "</span>" +
-                            "<br/><a href='C:/Users/DELL/Desktop/HACKNTU/page2.html?aa="+ "bbb" +"'>連結</a>"
+                            "<br/><a href='./page2.html?lat="+ locations1[i][2] + "&lng=" + locations1[i][3] +  "&type=1&no="+ locations1[i][4]  +"'>連結</a>"
                         );
                         infowindow.open(map, marker);
                     }
@@ -201,14 +202,18 @@
 
             for (var i = 0; i < locations2.length; i++) {  
                 marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(locations2[i][1], locations2[i][2]),
+                    position: new google.maps.LatLng(locations2[i][2], locations2[i][3]),
                     map: map
                 });
 
                 google.maps.event.addListener(marker, 'click', (function(marker, i) {
                     return function() {
-                    infowindow.setContent(locations[i][0]);
-                    infowindow.open(map, marker);
+							infowindow.setContent(locations2[i][0]+ 
+                            "<br/><span>人數 :" + locations2[i][1] + "</span>" +
+                            "<br/><a href='./page2.html?lat="+ locations2[i][2] + "&lng=" + locations2[i][3] +  "&type=2&no="+ locations2[i][4]  +"'>連結</a>"
+						
+						);
+						infowindow.open(map, marker);
                     }
                 })(marker, i));
             }
