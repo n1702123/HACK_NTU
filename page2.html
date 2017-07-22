@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,8 +42,8 @@
 		
 		#myRight{
 		    background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0, 0, 0, 0) 100%);
-			background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0, 0, 0, 0) 100%);
-			
+			background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0, 0, 0, 0) 100%); 
+			height:100px; 
 		}
 		
     </style>
@@ -73,43 +74,73 @@
 
     <!-- Page Content -->
     <div class="container">
+	
+		<div class="row">
+			 <div class="col-lg-12">
+				 <div class="col-lg-4">
+                    <h2><b><span id="myTitle" ></span></b></h2> 
+                     
+                </div>
+			 
+			 </div>
+		
+		</div>
 
         <!-- Introduction Row -->
         <div class="row">
             <div class="col-lg-12">
 
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <h3><span><b>公車 可服務面積</b></span> </h3>
                     <h5><span id="busAreaText"></span> </h5>
                     
-                    <div id="busMap" style="width:350px;height:300px"></div>
+                    <div id="busMap" style="width:450px;height:300px"></div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <h3><span><b>MRT 可服務面積</b></span> </h3>
                     <h5><span id="mrtAreaText"></span> </h5>
-                    <div id="mrtMap" style="width:350px;height:300px"></div>
+                    <div id="mrtMap" style="width:450px;height:300px"></div>
                 </div>
 
-                <div class="col-lg-4">
-                    <h3><span><b>Ubike 可服務面積</b></span> </h3>
-                    <h5><span id="ubikeAreaText"></span> </h5>
-                    <div id="ubikeMap" style="width:350px;height:300px"></div>
-                </div>
+               
             </div>
         </div>
 
         <div class="row">
             <div class="col-lg-12">
-                <div class="col-lg-4">
+			 
+				 <div class="col-lg-6">
+                    <h3><span><b>Ubike 可服務面積</b></span> </h3>
+                    <h5><span id="ubikeAreaText"></span> </h5>
+					<h5><span></span> </h5>
+                    <div id="ubikeMap" style="width:450px;height:300px"></div>
+                </div>
+			
+                <div class="col-lg-6">
                     <h3><span><b>公車彎繞程度</b></span> </h3>
                     <h5><span id="busCurveText"></span> </h5>
                     <h5><span>彎繞程度指標=公車路線行駛距離/實際路線最短距離</span> </h5>
-                    <div id="busCurveMap" style="width:350px;height:300px"></div>
+                    <div id="busCurveMap" style="width:450px;height:300px"></div>
                 </div>
-                 
+				
             </div>
         </div>
+		
+		
+		<div class="row">
+		
+			<div class="col-lg-6"> 
+				<img  src="img11.JPG" style="height:100%;width:100%"  ></img>
+			</div>
+			
+			<div class="col-lg-6"> 
+				<img  src="img22.JPG" style="height:100%;width:100%"  ></img>
+			</div>
+		
+		
+		</div>
+		
         <hr>
 		
 		<!-- <h2>Carousel Example</h2>  --> 
@@ -118,10 +149,11 @@
 			 
             <div class="col-lg-12">
 			
-				<div id="myCarousel" class="carousel slide" data-ride="carousel"  style="height:500px;"  >
+				<div id="myCarousel" class="carousel slide" data-ride="carousel"  
+					  style='border-style: solid; border-width: 2px;background:#EBF5FF;'  >
   
 					<!-- Wrapper for slides -->
-					<div class="carousel-inner" id="helloText">
+					<div class="carousel-inner" id="helloText"   >
 					 
 				  
 					</div>
@@ -136,6 +168,7 @@
 					  <span class="sr-only">Next</span>
 					</a>
 				</div> 
+				
 			</div> 
 			 
 		</div>
@@ -147,7 +180,7 @@
 		<footer>
 			<div class="row">
 				<div class="col-lg-12">
-					 
+					  台大黑客松
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>
@@ -247,13 +280,13 @@
 				"竹子湖海芋季交通管制 請搭乘公車上山賞花！<br/><br/>" +
 				"臺北市政府產業發展局規劃竹子湖海芋季活動自3月24日(五)起跑，至4月23日結束，將吸引大量人車潮上山賞花，為疏解陽明山竹子湖地區周邊道路交通，其相關交通管制措施如下：<br/><br/>" +
 				"一、 交通管制部分：海芋季期間例假日及連續假日（包括3/25、3/26、4/1、4/2、4/3、4/4、4/8、4/9、4/15、4/16、4/22、4/23）每日上午9時至下午6時，湖田橋往西經海芋大道至往中正山之岔路口採順時鐘單行管制；湖田橋往東至頂湖段前為雙向通行。頂湖段採單向通行且禁止迴轉，車輛由新闢石板路往陽金公路離開。另仰德大道實施通行證管制，上山管制點於仰德大道與至誠路口，管制時間由上午8時至下午3時；下山管制點於陽明路一段43巷口，管制時間為下午2時至下午6時，管制對象為自用小客(貨)車。<br/><br/>" +
-				"二、 公車輸運服務部分，為配合海芋季管制、減少私人運具使用及降低陽明山停車空間不足所衍生之交通擁塞，民眾可利用以下公車接駁上山： <br/><br/>" +
-				"(一)直達竹子湖<br/><br/>" +
-				"1.捷運石牌站：休閒公車128(假日行駛)及小8路公車。<br/><br/>" +
-				"2.捷運北投站：休閒公車129(假日行駛)及小9（台灣好行北投竹子湖線）。<br/><br/>" +
-				"  (二)先搭乘公車至「陽明山公車總站」下車，再轉乘128(假日行駛)、129(假日行駛)、小8、小9（台灣好行北投竹子湖線）及花季專車131路公車至竹子湖：<br/><br/>" +
-				"1.臺北車站：260(含區間車)。<br/><br/>" +
-				"2.捷運劍潭站：260(含區間車)、紅5、休閒公車109(假日行駛)、111路(假日行駛)及花季專車127路公車（花季專車127為花季及海芋季期間假日行駛)。<br/><br/>" +
+				"二、 公車輸運服務部分，為配合海芋季管制、減少私人運具使用及降低陽明山停車空間不足所衍生之交通擁塞，民眾可利用以下公車接駁上山： <br/> " +
+				"(一)直達竹子湖<br/>" +
+				"1.捷運石牌站：休閒公車128(假日行駛)及小8路公車。<br/>" +
+				"2.捷運北投站：休閒公車129(假日行駛)及小9（台灣好行北投竹子湖線）。<br/>" +
+				"  (二)先搭乘公車至「陽明山公車總站」下車，再轉乘128(假日行駛)、129(假日行駛)、小8、小9（台灣好行北投竹子湖線）及花季專車131路公車至竹子湖：<br/>" +
+				"1.臺北車站：260(含區間車)。<br/>" +
+				"2.捷運劍潭站：260(含區間車)、紅5、休閒公車109(假日行駛)、111路(假日行駛)及花季專車127路公車（花季專車127為花季及海芋季期間假日行駛)。<br/>" +
 				"3.捷運北投站：230路公車。<br/><br/>"
   
 			, 
@@ -281,31 +314,27 @@
 				"     (1) 文山區木柵路5段43巷口。 <br/>" +
 				"     (2) 南港區研究院路3段（中華技術學院旁）。 <br/>" +
 				"  3. 管制車輛單向通行：南港區研究院路與掃墓公車調度站口。<br/>" +
-				"  4. 上揭管制點僅准許掃墓公車、復康巴士及執行公務車輛通行。<br/>" +
-				"（二） 例假日免費掃墓公車（墓區內路段隨招隨停）<br/>" + 
-				"1. 木柵線：捷運動物園站2號出口－萬福橋－富德靈骨樓。<br/>" +
-				"2. 崇德線：捷運麟光站－崇德街－富德公墓管理所(於富德公墓管理所可換搭木柵線、南港線至富德靈骨樓)。<br/>" +
-				"3. 南港線：南港軍人公墓－富德靈骨樓。<br/>" +
-				"4. 軍人公墓線：南港軍人公墓－忠靈堂。<br/>"
+				"  4. 上揭管制點僅准許掃墓公車、復康巴士及執行公務車輛通行。<br/>"
+ 
 			 
 			],  // 陽明山 (5)
 			 
 		];
 		 
 		var myFacebook = [ 
-			[ '0,0,9,0,0,0,0,Monday,13,status' ]  
+			[ 'video,high,high,high,high,low,low,low,low,Thursday,17,https://www.facebook.com/170520926428695/posts/737725213041594' ]  
 			,  
 			[
-				'0,1,8,2,0,0,0,Thursday,17,status',
-				'0,4,47,1,0,0,0,Monday,22,video',
-				'0,3,69,0,0,0,0,Monday,22,photo',
-				'0,1,6,0,0,0,0,Thursday,15,photo' 
+				'photo,high,medium,high,high,low,low,low,low,Saturday,9,https://www.facebook.com/170520926428695/posts/337735263040593',
+				'status,low,low,low,low,low,low,low,low,Friday,9,https://www.facebook.com/170520926428695/posts/298334156980704',
+				'status,low,medium,low,low,low,low,low,low,Friday,9,https://www.facebook.com/170520926428695/posts/280492942098159',
+				'status,low,low,low,low,low,low,low,low,Friday,8,https://www.facebook.com/170520926428695/posts/280465825434204' 
 			] 
 			,  
 			[
-				'8,48,80,3,0,0,5,Wednesday,19,video',
-				'5,13,40,2,0,1,1,Wednesday,16,photo',
-				'1,0,9,0,0,0,1,Wednesday,9,link' 
+				'link,medium,medium,high,medium,low,low,low,low,Thursday,13,https://www.facebook.com/170520926428695/posts/773899649424150',
+				'link,low,medium,low,low,low,low,low,low,Monday,15,https://www.facebook.com/170520926428695/posts/772275776253204',
+				'photo,medium,low,low,medium,low,low,low,low,Tuesday,16,https://www.facebook.com/170520926428695/posts/768940359920079' 
 			]   
 		];
  
@@ -323,7 +352,8 @@
             transitType: 'YMB',
             startTime: '0800',
 			no : null,
-			type : null
+			type : null,
+			title : ""
         }
         var lat;
         var lng;
@@ -347,14 +377,16 @@
 			
 			state.type = urlParams.type;
 			state.no = urlParams.no;
+			state.title = urlParams.title;
 			
         })();
 		
+		$("#myTitle").html(state.title + " 分析指標");
 		
 		if(state.type!=1){
 		
-			var mytemp1 = myObj[2]; 
-			var mytemp2 = myFacebook[2];
+			var mytemp1 = myObj[state.no]; 
+			var mytemp2 = myFacebook[state.no];
 		
 			var tempString = ""; 
 			for(var i = 0 ; i < mytemp1.length ; i++){
@@ -366,29 +398,29 @@
 				console.log("getFBinfo:",getFBinfo);
 					
 				if(i == 0){
-					tempString = tempString + "<div class='item active'  >";
+					tempString = tempString + "<div class='item active' >";
 				}else{
-					tempString = tempString + "<div class='item'>";
+					tempString = tempString + "<div class='item'  >";
 				}
 				
-					tempString = tempString + "<div class='col-lg-10'>";
-				
-						tempString = tempString + "<img     style='height:600px;'> ";
-						tempString = tempString + "<div  class='mytext' >"+ mytemp1[i] +"</div> ";
+					tempString = tempString + "<div class='col-lg-10'  >";
+				 
+						tempString = tempString + "<div  class='mytext'   >"+ mytemp1[i] +"</div> ";
 							 
 					tempString = tempString + "</div>"; // col-lg-10
 					 
-					tempString = tempString + "<div class='col-lg-2'>"; // col-lg-2
-					tempString = tempString + "留言:"+getFBinfo[0]+"<br/>";
-					tempString = tempString + "分享數:"+getFBinfo[1]+"<br/>";  
-					tempString = tempString + "按讚數:"+getFBinfo[2]+"<br/>";  
-					tempString = tempString + "大心:"+getFBinfo[3]+"<br/>";  
-					tempString = tempString + "哈哈:"+getFBinfo[4]+"<br/>";  
-					tempString = tempString + "嗚:"+getFBinfo[5]+"<br/>";
-					tempString = tempString + "怒:"+getFBinfo[6]+"<br/>";  
-					tempString = tempString + "PO文日期:"+getFBinfo[7]+"<br/>";  
-					tempString = tempString + "PO文小時:"+getFBinfo[8]+"<br/>";  
-					tempString = tempString + "PO種類:"+getFBinfo[9]+"<br/>";  
+					tempString = tempString + "<div  class='col-lg-2' style='border-style: solid; border-width: 2px;' >"; // col-lg-2
+					tempString = tempString + "留言:"+getFBinfo[2]+"<br/><br/>";
+					tempString = tempString + "分享數:"+getFBinfo[3]+"<br/><br/>";  
+					tempString = tempString + "按讚數:"+getFBinfo[4]+"<br/><br/>";  
+					tempString = tempString + "大心:"+getFBinfo[5]+"<br/><br/>";  
+					tempString = tempString + "哈哈:"+getFBinfo[6]+"<br/><br/>";  
+					tempString = tempString + "嗚:"+getFBinfo[7]+"<br/><br/>";
+					tempString = tempString + "怒:"+getFBinfo[8]+"<br/><br/>";  
+					tempString = tempString + "PO文日期:"+getFBinfo[9]+"<br/><br/>";  
+					tempString = tempString + "PO文小時:"+getFBinfo[10]+"<br/><br/>";  
+					tempString = tempString + "PO種類:"+getFBinfo[0]+"<br/>";  
+					tempString = tempString + "<a href='"+getFBinfo[11]+"'>超連結</a>";  
 					tempString = tempString + "</div>"; 
 				 
 				tempString = tempString + "</div>";  //  class='item' end
@@ -398,12 +430,9 @@
 			$("#helloText").html(tempString);
 			 
 		
-		}else{
-		
-			// $("#viewAA").remove("#myCarousel"); 
+		}else{ 
 			$("#viewAA").empty();
-			$("#viewAA").hide();
-		
+			$("#viewAA").hide(); 
 		}
 		
 		
@@ -629,9 +658,7 @@
 		
 		
 		$(document).ready(function(){
-		
-
-			
+		 
 		});
 		
 		

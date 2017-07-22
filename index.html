@@ -190,7 +190,7 @@
                         infowindow.setContent(
                             locations1[i][0] + 
                             "<br/><span>人數 :" + locations1[i][1] + "</span>" +
-                            "<br/><a href='./page2.html?lat="+ locations1[i][2] + "&lng=" + locations1[i][3] +  "&type=1&no="+ locations1[i][4]  +"'>連結</a>"
+                            "<br/><a href='./page2.html?lat="+ locations1[i][2] + "&lng=" + locations1[i][3] + "&title="+ locations1[i][0] + "&type=1&no="+ locations1[i][4]  +"'>連結</a>"
                         );
                         infowindow.open(map, marker);
                     }
@@ -211,7 +211,7 @@
                     return function() {
 							infowindow.setContent(locations2[i][0]+ 
                             "<br/><span>人數 :" + locations2[i][1] + "</span>" +
-                            "<br/><a href='./page2.html?lat="+ locations2[i][2] + "&lng=" + locations2[i][3] +  "&type=2&no="+ locations2[i][4]  +"'>連結</a>"
+                            "<br/><a href='./page2.html?lat="+ locations2[i][2] + "&lng=" + locations2[i][3] + "&title="+ locations2[i][0] + "&type=2&no="+ locations2[i][4]  +"'>連結</a>"
 						
 						);
 						infowindow.open(map, marker);
