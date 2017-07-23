@@ -27,7 +27,7 @@
 
 
     <style>
-  
+  *{font-family:Arial,文泉驛正黑,WenQuanYi Zen Hei,儷黑 Pro,LiHei Pro,微軟正黑體,Microsoft JhengHei,標楷體,DFKai-SB,sans-serif;box-sizing:border-box}
 		 
 		.mytext {
 			left: 0;
@@ -538,8 +538,8 @@
                 data: {
                     lat: state.lat,
                     lng: state.lng,
-                    // walkDistance: state.walkDistance,
-                    walkDistance: 300,
+                     walkDistance: state.walkDistance,
+                    //walkDistance: 500,
                 },
                 dataType: "jsonp",
                 success: function (response) {
@@ -556,8 +556,7 @@
                 data: {
                     lat: state.lat,
                     lng: state.lng,
-                    // walkDistance: state.walkDistance,
-                        walkDistance: 300,
+                         walkDistance: state.walkDistance,
                 },
                 dataType: "jsonp",
                 success: function (response) {
@@ -576,7 +575,7 @@
                 fillOpacity: 0.9,
                 strokeColor: '#00B3FD',
                 strokeOpacity: 0.9,
-                strokeWeight: 4,
+                strokeWeight: 3,
                 zIndex: 996
             });
             busCurveLayer.addGeoJson(jQuery.parseJSON(data.result));
@@ -642,8 +641,9 @@
             aaa=_data;
             var data= _data.result;
             for (var i in data) {
-                
+                console.log("~~index=" + data[i].index)
                 if (data[i].index > 1 && data[i].index < 3) {
+                    console.log("index="+data[i].index)
                     index = parseFloat(data[i].index) + index;
                     count++;
                 }
